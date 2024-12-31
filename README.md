@@ -64,6 +64,7 @@ Learnings in this project are as follows -
 
 
 
+
 1. Clone this git CODE in vs code . you will see that you are working on main branch .
 2. to be more practical in git , create a branch inside git and work on these branches , and keep on merging the code in the main branch. again always create a branch from main only.
 
@@ -122,6 +123,7 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 
+
 1. **Predictable Layouts**: The size you set is the size you get, which reduces unexpected overflow and makes layout planning straightforward.
 
 
@@ -130,6 +132,7 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 ### Why `min-height: 100vh`?
+
 
 
 
@@ -160,6 +163,7 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 
+
 1. **Percentage Units for Width (**`100%`):
    * `width: 100%` ensures the element stretches across the entire width of its parent or the viewport.
    * This works well because, unlike height, the content in most layouts naturally expands horizontally, so a **minimum width** isn't as important.
@@ -179,6 +183,7 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 
+
 1. `height: 100vh`:
    * If you set `height: 100vh`, the element's height becomes **fixed** at the viewport height, even if the content overflows. This can cause issues where content gets **cut off** and scrolling is disabled unintentionally.
 2. `min-width: 100vh`:
@@ -186,6 +191,7 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 ### Why Not Use `width: 100%` and `height: 100%` Together?
+
 
 
 
@@ -309,6 +315,7 @@ Breaking it Down:
 
 
 
+
 1. `margin: 0 auto;`
    * `0`: Sets the top and bottom margins to `0`.
    * `auto`: Sets the left and right margins to automatically adjust, centering the element horizontally within its parent container.
@@ -379,6 +386,7 @@ Flexbox positioning properties allow you to align and distribute elements within
 #### **A. Container-Level Properties**
 
 These properties are applied to the **flex container**:
+
 
 
 
@@ -507,6 +515,7 @@ These properties are applied to **flex items**:
 
 
 
+
 1. `align-self`
    * Aligns a single item **along the cross axis**, overriding `align-items`.
    * Values: Same as `align-items`.
@@ -625,6 +634,7 @@ Here’s a list of **semantic HTML tags**:
 
 
 
+
  1. `<header>`
  2. `<footer>`
  3. `<nav>`
@@ -663,6 +673,7 @@ Here’s a list of **non-semantic HTML tags**:
 
 
 
+
  1. `<div>`
  2. `<span>`
  3. `<b>`
@@ -676,6 +687,7 @@ Here’s a list of **non-semantic HTML tags**:
 
 
 ### **Why Use Semantic Tags?**
+
 
 
 
@@ -850,6 +862,7 @@ Target specific parts of an element.
 
 
 
+
 1. **Use Specificity Wisely**: Be precise to avoid overriding issues.
 2. **Combine Selectors**: Combine selectors for powerful, specific targeting.
 3. **Practice with Developer Tools**: Use browser dev tools to test and debug selectors.
@@ -860,6 +873,128 @@ This should give you a comprehensive overview of CSS selectors and how to use th
 
 # Border not visible
 
-Below is the normal image , where you can’t see the border and I wasted a whole day in finding the reason .  ![normal](assets/normal.png)When I zoomed the omage I was able to fgigure out that border was always there , all you need to zoom in the page to see the border correctly .  ![normal](assets/zoom.png)
+Below is the normal image , where you can’t see the border and I wasted a whole day in finding the reason .
+
+
+ ![normal](assets/normal.png)
+
+
+When I zoomed the omage I was able to fgigure out that border was always there , all you need to zoom in the page to see the border correctly .
+
+
+ ![normal](assets/zoom.png)
+
+# GRIDS in HTML
+
+### **1.** `grid-template-columns`
+
+* **What it does**: Defines the number and size of the columns in your grid container.
+* **How to use**:
+  * Specify widths for each column:
+
+    ```css
+    grid-template-columns: 100px 200px 1fr; /* 3 columns: fixed, fixed, flexible */
+    ```
+  * Use `repeat()` for cleaner code:
+
+    ```css
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    ```
+  * Use `auto-fit` or `auto-fill` for responsive grids:
+
+    ```css
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    ```
+
+
+---
+
+### **2.** `grid-template-rows`
+
+* **What it does**: Defines the number and size of the rows in your grid container.
+* **How to use**:
+  * Specify heights for each row:
+
+    ```css
+    grid-template-rows: 50px 100px 1fr; /* 3 rows: fixed, fixed, flexible */
+    ```
+  * Use `repeat()` for rows:
+
+    ```css
+    grid-template-rows: repeat(2, 50px); /* 2 rows of 50px height */
+    ```
+
+
+---
+
+### **3.** `grid-column`
+
+* **What it does**: Specifies where a grid item should start and end **horizontally** (across columns).
+* **How to use**:
+  * Basic syntax:
+
+    ```css
+    grid-column: 1 / 3; /* Starts at column 1 and spans to column 3 */
+    ```
+  * Shorthand for spanning columns:
+
+    ```css
+    grid-column: span 2; /* Spans 2 columns from its start position */
+    ```
+
+
+---
+
+### **4.** `grid-row`
+
+* **What it does**: Specifies where a grid item should start and end **vertically** (across rows).
+* **How to use**:
+  * Basic syntax:
+
+    ```css
+    grid-row: 1 / 2; /* Starts at row 1 and ends before row 2 */
+    ```
+  * Shorthand for spanning rows:
+
+    ```css
+    grid-row: span 2; /* Spans 2 rows from its start position */
+    ```
+
+
+---
+
+### **Example**
+
+```html
+<div class="grid-container">
+  <div class="item1">Item 1</div>
+  <div class="item2">Item 2</div>
+  <div class="item3">Item 3</div>
+</div>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: 100px 200px 1fr; /* 3 columns: 100px, 200px, flexible */
+    grid-template-rows: 50px 1fr; /* 2 rows: 50px, flexible */
+    gap: 10px;
+  }
+
+  .item1 {
+    grid-column: 1 / 3; /* Spans from column 1 to column 3 */
+    grid-row: 1; /* Stays in the first row */
+  }
+
+  .item2 {
+    grid-column: 3; /* Occupies column 3 */
+    grid-row: span 2; /* Spans 2 rows */
+  }
+
+  .item3 {
+    grid-column: 1 / -1; /* Spans all columns */
+    grid-row: 2; /* Stays in the second row */
+  }
+</style>
+```
 
 
