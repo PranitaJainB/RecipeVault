@@ -5,7 +5,7 @@ HTML-CSS  Design with a responsive layout for seamless browsing on both desktop 
 
 Mobile Version
 
- ![Mobile Version - fully responsive - screen 1 ](assets/mobile2.png)
+ ![Mobile Version - fully responsive - screen 1 ](assets/mobile3.png)
 
 
 Mobile Version
@@ -76,6 +76,8 @@ Learnings in this project are as follows -
  ![New](assets/new.png)
 
  ![Clone](assets/clone.png "left-50")
+
+
 
 
 
@@ -177,6 +179,8 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 
+
+
 1. **Predictable Layouts**: The size you set is the size you get, which reduces unexpected overflow and makes layout planning straightforward.
 
 
@@ -185,6 +189,8 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 ### Why `min-height: 100vh`?
+
+
 
 
 
@@ -243,6 +249,8 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 
+
+
 1. **Percentage Units for Width (**`100%`):
    * `width: 100%` ensures the element stretches across the entire width of its parent or the viewport.
    * This works well because, unlike height, the content in most layouts naturally expands horizontally, so a **minimum width** isn't as important.
@@ -276,6 +284,8 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 
+
+
 1. `height: 100vh`:
    * If you set `height: 100vh`, the element's height becomes **fixed** at the viewport height, even if the content overflows. This can cause issues where content gets **cut off** and scrolling is disabled unintentionally.
 2. `min-width: 100vh`:
@@ -283,6 +293,8 @@ The total width remains **200px**, making it much easier to manage layouts.
 
 
 ### Why Not Use `width: 100%` and `height: 100%` Together?
+
+
 
 
 
@@ -434,6 +446,8 @@ Breaking it Down:
 
 
 
+
+
 1. `margin: 0 auto;`
    * `0`: Sets the top and bottom margins to `0`.
    * `auto`: Sets the left and right margins to automatically adjust, centering the element horizontally within its parent container.
@@ -504,6 +518,8 @@ Flexbox positioning properties allow you to align and distribute elements within
 #### **A. Container-Level Properties**
 
 These properties are applied to the **flex container**:
+
+
 
 
 
@@ -660,6 +676,8 @@ These properties are applied to **flex items**:
 
 
 
+
+
 1. `align-self`
    * Aligns a single item **along the cross axis**, overriding `align-items`.
    * Values: Same as `align-items`.
@@ -792,6 +810,8 @@ Here’s a list of **semantic HTML tags**:
 
 
 
+
+
  1. `<header>`
  2. `<footer>`
  3. `<nav>`
@@ -844,6 +864,8 @@ Here’s a list of **non-semantic HTML tags**:
 
 
 
+
+
  1. `<div>`
  2. `<span>`
  3. `<b>`
@@ -857,6 +879,8 @@ Here’s a list of **non-semantic HTML tags**:
 
 
 ### **Why Use Semantic Tags?**
+
+
 
 
 
@@ -1039,6 +1063,8 @@ Target specific parts of an element.
 | First Line | `::first-line` | `p::first-line {}` | Styles the first line of a `<p>`. |
 
 ### 
+
+
 
 
 
@@ -1362,6 +1388,8 @@ In CSS, **padding** can only affect the visual size of an element if it has enou
 
 
 
+
+
 1. **Inline Elements Ignore Vertical Padding**
    * **Inline elements** (like `<a>`, `<span>`, `<b>`, etc.) respect **horizontal padding** (left and right), but they often ignore **vertical padding** (top and bottom).
    * This is because inline elements are designed to flow with text, so their height is determined by the line height, not padding.
@@ -1455,6 +1483,8 @@ is a powerful and flexible way to define a **responsive grid layout**. Let’s b
 
 
 
+
+
 1. **When there’s enough space:**
    * Columns will grow to share the available space equally, but each will still be at least 100px wide.
 2. **When space is limited:**
@@ -1508,6 +1538,8 @@ is a powerful and flexible way to define a **responsive grid layout**. Let’s b
 
 
 
+
+
 1. On a **wide screen**, the items will stretch across multiple columns.
 2. On a **narrow screen**, the number of columns will decrease, ensuring all items are at least 100px wide.
 
@@ -1517,6 +1549,8 @@ This approach is perfect for creating **responsive layouts** that adapt seamless
 The `object-fit` property in CSS is used to control how the content of an element (like an image or a video) is resized to fit within its container. It works similarly to the `background-size` property but applies to inline content (like images or videos).
 
 Here are the possible values for `object-fit`:
+
+
 
 
 
@@ -1573,6 +1607,8 @@ This property is often used with images, videos, or other media elements within 
 The `object-fit` property in CSS is used to control how the content of an element (like an image or a video) is resized to fit within its container. It works similarly to the `background-size` property but applies to inline content (like images or videos).
 
 Here are the possible values for `object-fit`:
+
+
 
 
 
@@ -1631,6 +1667,8 @@ This property is often used with images, videos, or other media elements within 
 The `object-fit` property in CSS is used to control how the content of an element (like an image or a video) is resized to fit within its container. It works similarly to the `background-size` property but applies to inline content (like images or videos).
 
 Here are the possible values for `object-fit`:
+
+
 
 
 
@@ -1783,6 +1821,8 @@ You can combine multiple conditions using logical operators: `and`, `not`, and `
 ### Common Use Cases
 
 
+
+
 1. **Responsive Layouts**:
    * Media queries allow your page layout to adjust to different screen sizes, making it responsive.
 
@@ -1801,8 +1841,9 @@ body {
 ```
 
 
-2. **Mobile-First Design**:
-   * It's common practice to design for mobile devices first and then progressively add styles for larger screens.
+2\. **Mobile-First Design**:
+
+* It's common practice to design for mobile devices first and then progressively add styles for larger screens.
 
 ```css
 /* Mobile-first styles (default) */
@@ -1826,8 +1867,9 @@ body {
 ```
 
 
-3. **Targeting High-Resolution Displays**:
-   * High-resolution devices (like Retina screens) can be targeted using `min-resolution` or `min-device-pixel-ratio`.
+3\. **Targeting High-Resolution Displays**:
+
+* High-resolution devices (like Retina screens) can be targeted using `min-resolution` or `min-device-pixel-ratio`.
 
 ```css
 /* Styles for Retina screens */
@@ -1883,3 +1925,30 @@ body {
 This will adjust the text size and background color based on the device's screen width and resolution, ensuring a great user experience across different devices.
 
 Let me know if you need any more details or examples!
+
+
+# Brealpoints for 3 screen : mobile , tablet , desktop
+
+```javascript
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+body {
+font-size: 14px;
+}
+}
+/* Tablet styles */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+body {
+font-size: 16px;
+}
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1025px) {
+body {
+font-size: 18px;
+}
+}
+```
+
+
