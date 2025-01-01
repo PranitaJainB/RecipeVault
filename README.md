@@ -1951,4 +1951,6 @@ font-size: 18px;
 }
 ```
 
-
+# Scope of Improvment
+1. using rem for font size but this will not scale as viewport size changes.you should write either media query to change root font size , or use vw,vh,vmin type of units.
+2. in menu bar when it is small screen you should 
